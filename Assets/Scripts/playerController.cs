@@ -6,15 +6,31 @@ using UnityEngine.InputSystem;
 
 public class playerController : MonoBehaviour
 {
+    [Header("Player Settings")]
     [SerializeField] private GameObject player;
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject enemy;
+    [SerializeField] private int health;
+    [Header("Inventory Settings")]
+    [SerializeField] private InventoryObject _inventoryObject;
+    
     private Rigidbody2D _rb;
     private bool _canHit = false;
     private Vector2 _moveInput;
 
     public static Action<GameObject, int> HitEnemy;
-    
+    public static Action<int> UpdateHealth;
+
+    private void OnEnable()
+    {
+        EnemyController.AttackPlayer += TakeDamage;
+    }
+
+    private void OnDisable()
+    {
+        EnemyController.AttackPlayer -= TakeDamage;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +54,7 @@ public class playerController : MonoBehaviour
     {
         if (context.performed)
         {
-            HitEnemy?.Invoke(enemy, 1);
+            HitEnemy?.Invoke(enemy, _inventoryObject.currentWeapon.damage);
             
         }
     }
@@ -59,5 +75,11 @@ public class playerController : MonoBehaviour
             _canHit = false;
             enemy = null;
         }
+    }
+
+    private void TakeDamage(int amount)
+    {
+        health -= amount;
+        UpdateHealth?.Invoke(health);
     }
 }

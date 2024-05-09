@@ -9,5 +9,6 @@ namespace DefaultNamespace
         public int health;
         public int damage;
         public float speed;
+        public int followDistance;
     }
 }
