@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header("Enemy Type")]
     [SerializeField] private EnemyTypes enemyType;
+    [Header("Enemy Stats")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private int health;
     [SerializeField] private int distance;

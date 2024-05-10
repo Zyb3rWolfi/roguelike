@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d92285eb0df546bf971125300772890a, type: 3}
-  m_Name: Sturdy Sword
+  m_Script: {fileID: 11500000, guid: 045448bf674145dcbd2c8d3f7612a48b, type: 3}
+  m_Name: Healing Potion
   m_EditorClassIdentifier: 
-  name: Sturdy Swords
-  description: A simple sword
-  prefab: {fileID: 7047793214006889739, guid: 7543a2ed768d4f546b2e9ea1e07e36ea, type: 3}
-  damage: 2
-  ItemType: 0
+  name: Healing Potion
+  description: A potion that heals
+  prefab: {fileID: 0}
+  ItemType: 1
+  healAmount: 10

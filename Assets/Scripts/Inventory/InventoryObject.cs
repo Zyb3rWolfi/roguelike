@@ -7,6 +7,9 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject
 {
     public WeaponScriptable currentWeapon;
+    public PotionScriptable currentPotion;
+    public RelicScriptable currentRelic;
+    public armourScritpable currentArmour;
     public List<WeaponScriptable> items = new List<WeaponScriptable>();
 
     public void AddItem(WeaponScriptable item)
