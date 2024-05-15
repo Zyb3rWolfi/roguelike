@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sturdy Swords
   description: A simple sword
-  prefab: {fileID: 7047793214006889739, guid: 7543a2ed768d4f546b2e9ea1e07e36ea, type: 3}
+  prefab: {fileID: 1552608720032829223, guid: 5ecd91c293d58c74c8d64e6035da4e05, type: 3}
   damage: 2
   ItemType: 0

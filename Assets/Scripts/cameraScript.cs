@@ -12,7 +12,7 @@ namespace DefaultNamespace
         {
         }
 
-        void FixedUpdate()
+        void LateUpdate()
         {
             Vector3 targetCamPos = target.position + offset;
             targetCamPos.z = -10;

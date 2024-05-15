@@ -10,14 +10,14 @@ public class InventoryObject : ScriptableObject
     public PotionScriptable currentPotion;
     public RelicScriptable currentRelic;
     public armourScritpable currentArmour;
-    public List<WeaponScriptable> items = new List<WeaponScriptable>();
+    public List<ItemScriptable> items = new List<ItemScriptable>();
 
-    public void AddItem(WeaponScriptable item)
+    public void AddItem(ItemScriptable item)
     {
         items.Add(item);
     }
 
-    public void RemoveItem(WeaponScriptable item)
+    public void RemoveItem(ItemScriptable item)
     {
         items.Remove(item);
     }

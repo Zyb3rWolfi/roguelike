@@ -19,6 +19,8 @@ public class playerController : MonoBehaviour
     private Rigidbody2D _rb;
     private bool _canHit = false;
     private Vector2 _moveInput;
+    private bool is_moveing = false;
+    private Vector2 _magnitude;
 
     public static Action<GameObject, int> HitEnemy;
     public static Action<int> UpdateHealth;
@@ -43,16 +45,44 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 moveAmount = new Vector3(_moveInput.x, _moveInput.y, 0f) * moveSpeed * Time.deltaTime;
-        transform.Translate(moveAmount);
-    } 
+        
+        _rb.velocity = _moveInput * moveSpeed;
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (_magnitude != Vector2.zero)
+        {
+            _animator.SetFloat("Xinput", _magnitude.x);
+            _animator.SetFloat("Yinput", _magnitude.y);
+        }
+        else
+        {
+            is_moveing = false;
+        }
+        
+        handleAnimation();
+        print(_magnitude);
+    }
+
+    private void handleAnimation()
+    {
+        if (is_moveing)
+        {
+            _animator.Play("running");
+        }
+        else
+        {
+            _animator.Play("Idle");
+        }
+    }
 
     public void moveScript(InputAction.CallbackContext context)
     {
         _moveInput = context.ReadValue<Vector2>();
-        _animator.SetFloat("Xinput", _moveInput.x);
-        _animator.SetFloat("Yinput", _moveInput.y);
-
+        _magnitude = _moveInput.normalized;
+        is_moveing = true;
     }
 
     public void HitButton(InputAction.CallbackContext context)
@@ -60,6 +90,7 @@ public class playerController : MonoBehaviour
         if (context.performed)
         {
             HitEnemy?.Invoke(enemy, _inventoryObject.currentWeapon.damage);
+            WeaponAnimations.Attack?.Invoke();
             
         }
     }

@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -14,6 +17,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField] private Button _armourButton;
     [Header("Inventory")]
     [SerializeField] private InventoryObject _inventoryObject;
+    [SerializeField] private GameObject _itemSlot;
+    [SerializeField] private GameObject _slotParent;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +26,34 @@ public class InventoryController : MonoBehaviour
         SetUpPotionButton();
         SetUpRelicButton();
         SetUpArmourButton();
+        SetUpInventory();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        WeaponAnimations.pickupItem += UpdateInventory;
+    }
+    
+    private void OnDisable()
+    {
+        WeaponAnimations.pickupItem -= UpdateInventory;
     }
 
+    private void UpdateInventory(ItemScriptable _item)
+    {
+        _inventoryObject.AddItem(_item);
+        SetUpInventory();
+    }
+
+    private void SetUpInventory()
+    {
+        for (int i = 0; i < _inventoryObject.items.Count(); i++)
+        {
+               GameObject tempSlot = Instantiate(_itemSlot, _slotParent.transform);
+               tempSlot.GetComponentInChildren<TextMeshProUGUI>().text = _inventoryObject.items[i].name;
+        }
+    }
+    
     private void SetUpWeaponButton()
     {
         TextMeshProUGUI buttonText = _weaponButton.GetComponentInChildren<TextMeshProUGUI>();
