@@ -71,6 +71,8 @@ public class InventoryController : MonoBehaviour
         else
         {
             buttonText.text = "Empty";
+            
         }
     }
+    
 }

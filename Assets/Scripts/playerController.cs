@@ -13,6 +13,8 @@ public class playerController : MonoBehaviour
     [SerializeField] private int health;
     [Header("Inventory Settings")]
     [SerializeField] private InventoryObject _inventoryObject;
+
+    [Header("Animation")] [SerializeField] private Animator _animator;
     
     private Rigidbody2D _rb;
     private bool _canHit = false;
@@ -48,6 +50,9 @@ public class playerController : MonoBehaviour
     public void moveScript(InputAction.CallbackContext context)
     {
         _moveInput = context.ReadValue<Vector2>();
+        _animator.SetFloat("Xinput", _moveInput.x);
+        _animator.SetFloat("Yinput", _moveInput.y);
+
     }
 
     public void HitButton(InputAction.CallbackContext context)
