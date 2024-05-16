@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d92285eb0df546bf971125300772890a, type: 3}
-  m_Name: Standard Sword
+  m_Name: Diamond Sword
   m_EditorClassIdentifier: 
-  name: Standard Sword
-  description: 
-  prefab: {fileID: 1552608720032829223, guid: 4a859802b7afbd941a342e9585b5decc, type: 3}
-  damage: 5
+  name: Diamond Sword
+  description: The shiniest out of them all
+  prefab: {fileID: 0}
+  damage: 4
   ItemType: 0

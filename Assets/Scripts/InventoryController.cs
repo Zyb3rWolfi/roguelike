@@ -70,8 +70,8 @@ public class InventoryController : MonoBehaviour
         {
             return;
         }
-        Image img = _weaponButton.GetComponent<Image>();
-        img.sprite = _inventoryObject.currentWeapon.prefab.GetComponent<SpriteRenderer>().sprite;
+        UnityEngine.UI.Image img = _weaponButton.GetComponent<UnityEngine.UI.Image>();
+        img.sprite = _inventoryObject.currentWeapon.prefab.gameObject.GetComponent<SpriteRenderer>().sprite;
     }
     
     private void SetUpPotionButton()

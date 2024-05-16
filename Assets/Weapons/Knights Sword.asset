@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2c9344a937c4a5287abd2a96ee441aa, type: 3}
-  m_Name: Slime
+  m_Script: {fileID: 11500000, guid: d92285eb0df546bf971125300772890a, type: 3}
+  m_Name: Knights Sword
   m_EditorClassIdentifier: 
-  enemyName: Zombie
-  health: 10
-  damage: 4
-  speed: 1
-  followDistance: 3
-  dropTable: {fileID: 11400000, guid: 6f1b3eb6de81c124db4111982ab8b246, type: 2}
+  name: Knights Sword
+  description: A sword that once belonged to a knight
+  prefab: {fileID: 0}
+  damage: 2
+  ItemType: 0

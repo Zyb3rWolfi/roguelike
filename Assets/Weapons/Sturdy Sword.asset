@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Sturdy Swords
   description: A simple sword
   prefab: {fileID: 1552608720032829223, guid: 5ecd91c293d58c74c8d64e6035da4e05, type: 3}
-  damage: 2
+  damage: 1
   ItemType: 0

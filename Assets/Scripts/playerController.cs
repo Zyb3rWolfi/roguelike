@@ -21,6 +21,7 @@ public class playerController : MonoBehaviour
     private Vector2 _moveInput;
     private bool is_moveing = false;
     private Vector2 _magnitude;
+    private int speed_modifier = 0;
 
     public static Action<GameObject, int> HitEnemy;
     public static Action<int> UpdateHealth;
@@ -45,13 +46,17 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        _rb.velocity = _moveInput * (moveSpeed + _inventoryObject.currentArmour.speed_modifier);
+        _rb.velocity = _moveInput * (moveSpeed + speed_modifier);
         
     }
 
     private void FixedUpdate()
     {
+        if (_inventoryObject.currentArmour)
+        {
+            speed_modifier = _inventoryObject.currentArmour.speed_modifier;
+            
+        }
         if (_magnitude != Vector2.zero)
         {
             _animator.SetFloat("Xinput", _magnitude.x);
@@ -114,8 +119,16 @@ public class playerController : MonoBehaviour
 
     private void TakeDamage(int amount)
     {
-        int armourAmount = _inventoryObject.currentArmour.defence;
-        health -= amount - armourAmount;
-        UpdateHealth?.Invoke(health);
+        if (_inventoryObject.currentArmour)
+        {
+            int armourAmount = _inventoryObject.currentArmour.defence;
+            health -= amount - armourAmount;
+            UpdateHealth?.Invoke(health);
+            
+        } else
+        {
+            health -= amount;
+            UpdateHealth?.Invoke(health);
+        }
     }
 }

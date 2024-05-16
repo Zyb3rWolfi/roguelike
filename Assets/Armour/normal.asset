@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e613ecf5024a1096a0fae0d238f850, type: 3}
   m_Name: normal
   m_EditorClassIdentifier: 
-  name: normal
+  name: Leather Armour
   description: 
   prefab: {fileID: 0}
   ItemType: 2
-  defence: 0
+  defence: 1
+  speed_modifier: 1
