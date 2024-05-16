@@ -19,6 +19,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField] private InventoryObject _inventoryObject;
     [SerializeField] private GameObject _itemSlot;
     [SerializeField] private GameObject _slotParent;
+
+    [SerializeField] private ItemScriptable _tempItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +34,13 @@ public class InventoryController : MonoBehaviour
     private void OnEnable()
     {
         WeaponAnimations.pickupItem += UpdateInventory;
+        InvButton.OnItemClicked += ItemButtonPressed;
     }
     
     private void OnDisable()
     {
         WeaponAnimations.pickupItem -= UpdateInventory;
+        InvButton.OnItemClicked -= ItemButtonPressed;
     }
 
     private void UpdateInventory(ItemScriptable _item)
@@ -47,17 +51,27 @@ public class InventoryController : MonoBehaviour
 
     private void SetUpInventory()
     {
+        foreach (Transform child in _slotParent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        
         for (int i = 0; i < _inventoryObject.items.Count(); i++)
         {
                GameObject tempSlot = Instantiate(_itemSlot, _slotParent.transform);
-               tempSlot.GetComponentInChildren<TextMeshProUGUI>().text = _inventoryObject.items[i].name;
+               InvButton invButton = tempSlot.GetComponent<InvButton>();
+               invButton.SetItem(_inventoryObject.items[i]);
         }
     }
     
     private void SetUpWeaponButton()
     {
-        TextMeshProUGUI buttonText = _weaponButton.GetComponentInChildren<TextMeshProUGUI>();
-        buttonText.text = _inventoryObject.currentWeapon.name;
+        if (_inventoryObject.currentWeapon == null)
+        {
+            return;
+        }
+        Image img = _weaponButton.GetComponent<Image>();
+        img.sprite = _inventoryObject.currentWeapon.prefab.GetComponent<SpriteRenderer>().sprite;
     }
     
     private void SetUpPotionButton()
@@ -65,7 +79,8 @@ public class InventoryController : MonoBehaviour
         TextMeshProUGUI buttonText = _potionButton.GetComponentInChildren<TextMeshProUGUI>();
         if (_inventoryObject.currentPotion != null)
         {
-            buttonText.text = _inventoryObject.currentPotion.name;
+            Image img = _potionButton.GetComponent<Image>();
+            img.sprite = _inventoryObject.currentPotion.prefab.GetComponent<SpriteRenderer>().sprite;
         }
         else
         {
@@ -78,7 +93,8 @@ public class InventoryController : MonoBehaviour
         TextMeshProUGUI buttonText = _relicButton.GetComponentInChildren<TextMeshProUGUI>();
         if (_inventoryObject.currentRelic != null)
         {
-            buttonText.text = _inventoryObject.currentRelic.name;
+            Image img = _relicButton.GetComponent<Image>();
+            img.sprite = _inventoryObject.currentRelic.prefab.GetComponent<SpriteRenderer>().sprite;
         }
         else
         {
@@ -91,7 +107,8 @@ public class InventoryController : MonoBehaviour
         TextMeshProUGUI buttonText = _armourButton.GetComponentInChildren<TextMeshProUGUI>();
         if (_inventoryObject.currentArmour != null)
         {
-            buttonText.text = _inventoryObject.currentArmour.name;
+            Image img = _armourButton.GetComponent<Image>();
+            img.sprite = _inventoryObject.currentArmour.prefab.GetComponent<SpriteRenderer>().sprite;
         }
         else
         {
@@ -99,5 +116,88 @@ public class InventoryController : MonoBehaviour
             
         }
     }
+
+    public void ItemButtonPressed(ItemScriptable item)
+    {
+        _tempItem = item;
+    }
+
+    public void WeaponButtonPress()
+    {
+        if (_tempItem is WeaponScriptable && _inventoryObject.currentWeapon != null)
+        {
+            ItemScriptable _currentWeapon = _inventoryObject.currentWeapon; // weapon to inv
+            _inventoryObject.currentWeapon = _tempItem as WeaponScriptable; // Inv to weapon
+            _inventoryObject.SetItem(_currentWeapon, _tempItem);
+            SetUpInventory();
+            SetUpWeaponButton();
+        } else if (_inventoryObject.currentWeapon == null)
+        {
+            _inventoryObject.currentWeapon = _tempItem as WeaponScriptable; // Inv to weapon
+            _inventoryObject.RemoveItem(_tempItem);
+            SetUpInventory();
+            SetUpWeaponButton();
+        }
+    }
+
+    public void ArmourButtonPress()
+    {
+        if (_tempItem is armourScritpable && _inventoryObject.currentArmour != null)
+        {
+            ItemScriptable _currentArmour = _inventoryObject.currentArmour;
+            _inventoryObject.currentArmour = _tempItem as armourScritpable;
+            _inventoryObject.SetItem(_currentArmour, _tempItem);
+            SetUpInventory();
+            SetUpArmourButton();
+            
+        } else if (_inventoryObject.currentArmour == null)
+        {
+            _inventoryObject.currentArmour = _tempItem as armourScritpable; // Inv to weapon
+            _inventoryObject.RemoveItem(_tempItem);
+            SetUpInventory();
+            SetUpWeaponButton();
+        }
+
+    }
     
+    public void RelicButtonPress()
+    {
+        if (_tempItem is RelicScriptable && _inventoryObject.currentRelic != null)
+        {
+            ItemScriptable _currentRellic = _inventoryObject.currentRelic;
+            _inventoryObject.currentRelic = _tempItem as RelicScriptable;
+            _inventoryObject.SetItem( _currentRellic, _tempItem);
+            SetUpInventory();
+            SetUpArmourButton();
+            
+        } else if (_inventoryObject.currentRelic == null)
+        {
+            _inventoryObject.currentRelic = _tempItem as RelicScriptable; // Inv to weapon
+            _inventoryObject.RemoveItem(_tempItem);
+            SetUpInventory();
+            SetUpWeaponButton();
+        }
+
+    }
+    
+    public void PotionButtonPress()
+    {
+        if (_tempItem is PotionScriptable && _inventoryObject.currentPotion != null)
+        {
+            ItemScriptable _currentPotion = _inventoryObject.currentPotion;
+            _inventoryObject.currentPotion = _tempItem as PotionScriptable;
+            _inventoryObject.SetItem(_currentPotion, _tempItem);
+            SetUpInventory();
+            SetUpArmourButton();
+            
+        } else if (_inventoryObject.currentPotion == null)
+        {
+            _inventoryObject.currentPotion = _tempItem as PotionScriptable; // Inv to weapon
+            _inventoryObject.RemoveItem(_tempItem);
+            SetUpInventory();
+            SetUpWeaponButton();
+        }
+
+    }
+
 }

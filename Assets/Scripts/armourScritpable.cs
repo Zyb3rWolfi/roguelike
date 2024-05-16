@@ -6,6 +6,8 @@ namespace DefaultNamespace
     public class armourScritpable : ItemScriptable
     {
         public ItemType ItemType = ItemType.Armour;
+        
         public int defence;
+        public int speed_modifier;
     }
 }

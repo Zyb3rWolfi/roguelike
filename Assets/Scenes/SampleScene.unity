@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 146932766}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533236998}
+        m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
+        m_MethodName: ArmourButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &146932766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +740,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 417465464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533236998}
+        m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
+        m_MethodName: WeaponButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &417465464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4693,7 +4717,7 @@ RectTransform:
   m_GameObject: {fileID: 1533236996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.67148364, y: 0.53999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1395269817}
@@ -4702,7 +4726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -145, y: 0}
+  m_AnchoredPosition: {x: -158.16, y: -5.5201}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533236998
@@ -4724,6 +4748,7 @@ MonoBehaviour:
   _inventoryObject: {fileID: 11400000, guid: 2795071b29841014ca6bbe750eb22a0c, type: 2}
   _itemSlot: {fileID: 3968995441732154738, guid: 02bb97488fcb6f44394494dba3e9be56, type: 3}
   _slotParent: {fileID: 1307993772}
+  _tempItem: {fileID: 0}
 --- !u!1 &1586017711
 GameObject:
   m_ObjectHideFlags: 0

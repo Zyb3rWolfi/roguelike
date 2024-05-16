@@ -46,7 +46,7 @@ public class playerController : MonoBehaviour
     void Update()
     {
         
-        _rb.velocity = _moveInput * moveSpeed;
+        _rb.velocity = _moveInput * (moveSpeed + _inventoryObject.currentArmour.speed_modifier);
         
     }
 
@@ -63,7 +63,6 @@ public class playerController : MonoBehaviour
         }
         
         handleAnimation();
-        print(_magnitude);
     }
 
     private void handleAnimation()
@@ -115,7 +114,8 @@ public class playerController : MonoBehaviour
 
     private void TakeDamage(int amount)
     {
-        health -= amount;
+        int armourAmount = _inventoryObject.currentArmour.defence;
+        health -= amount - armourAmount;
         UpdateHealth?.Invoke(health);
     }
 }

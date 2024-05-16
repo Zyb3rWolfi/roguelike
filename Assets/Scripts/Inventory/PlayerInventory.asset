@@ -15,6 +15,7 @@ MonoBehaviour:
   currentWeapon: {fileID: 11400000, guid: 656aa19515dea7449933f488865a8c44, type: 2}
   currentPotion: {fileID: 0}
   currentRelic: {fileID: 0}
-  currentArmour: {fileID: 0}
+  currentArmour: {fileID: 11400000, guid: 3119d7911148b334c8cafb5291cd7e35, type: 2}
   items:
-  - {fileID: 11400000, guid: 656aa19515dea7449933f488865a8c44, type: 2}
+  - {fileID: 11400000, guid: 50a9ba60c8c373744b2f26f45dfbea00, type: 2}
+  - {fileID: 11400000, guid: 54f78d089a9b4d54ca0224be5a43eb27, type: 2}
