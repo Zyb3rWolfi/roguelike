@@ -16,6 +16,12 @@ public class playerController : MonoBehaviour
 
     [Header("Animation")] [SerializeField] private Animator _animator;
     
+    [Header("Weapon Placement")]
+    [SerializeField] private Vector3 _rightLocation;
+    [SerializeField] private Vector3 _leftLocation;
+    [SerializeField] private Vector3 _upLocation;
+    [SerializeField] private Vector3 _downLocation;
+    
     private Rigidbody2D _rb;
     private bool _canHit = false;
     private Vector2 _moveInput;
@@ -66,7 +72,40 @@ public class playerController : MonoBehaviour
         {
             is_moveing = false;
         }
-        
+
+        if (_magnitude.x < 0) 
+        {
+            GameObject child = player.transform.GetChild(0).gameObject;
+            child.transform.localPosition = _leftLocation;
+            child.GetComponent<SpriteRenderer>().sortingOrder = 12;
+
+            child.GetComponent<SpriteRenderer>().flipY = false;
+            child.GetComponent<SpriteRenderer>().flipX = true;
+        } else if (_magnitude.x > 0)
+        {
+            GameObject child = player.transform.GetChild(0).gameObject;
+            child.transform.localPosition = _rightLocation;
+            child.GetComponent<SpriteRenderer>().sortingOrder = 12;
+            child.GetComponent<SpriteRenderer>().flipY = true;
+            child.GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        if (_magnitude.y > 0)
+        {
+            GameObject child = player.transform.GetChild(0).gameObject;
+            child.transform.localPosition = _upLocation;
+            child.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            child.GetComponent<SpriteRenderer>().flipY = false;
+            child.GetComponent<SpriteRenderer>().flipX = false;
+
+        } else if (_magnitude.y < 0)
+        {
+            GameObject child = player.transform.GetChild(0).gameObject;
+            child.transform.localPosition = _downLocation;
+            child.GetComponent<SpriteRenderer>().sortingOrder = 12;
+            child.GetComponent<SpriteRenderer>().flipY = true;
+            child.GetComponent<SpriteRenderer>().flipX = false;
+        }
         handleAnimation();
     }
 

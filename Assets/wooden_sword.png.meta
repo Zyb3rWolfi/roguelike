@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7e49a5537cbce0b49902e93a5155778e
+guid: d5da633ff989def4db2dbb753388045d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 22
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerRunningLeft_0
+      name: wooden_sword_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 18
-        width: 11
-        height: 14
+        x: 7
+        y: 6
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6937036610a7e0b45a8381fba85bd22b
-      internalID: -632233164
+      spriteID: 583937658003e204583807fe7370516b
+      internalID: 1696856775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerRunningLeft_1
+      name: wooden_sword_1
       rect:
         serializedVersion: 2
-        x: 47
-        y: 18
-        width: 11
-        height: 13
+        x: 39
+        y: 6
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,71 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 737cdfda3c0d6b9449e31d61247205b3
-      internalID: 1778825998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerRunningLeft_2
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 18
-        width: 11
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc7b7341cea2209468f06f753e0ed300
-      internalID: 2110372994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerRunningLeft_3
-      rect:
-        serializedVersion: 2
-        x: 111
-        y: 18
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f54e751fd23c6542bcd8285bf59b7a6
-      internalID: -512941402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerRunningLeft_4
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 18
-        width: 11
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f06ea12af2ac1240aef667036816ede
-      internalID: -1052969101
+      spriteID: c238ccfdd1410e54d935ecb10865c5f4
+      internalID: 1221646192
       vertices: []
       indices: 
       edges: []
@@ -212,11 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerRunningLeft_0: -632233164
-      playerRunningLeft_1: 1778825998
-      playerRunningLeft_2: 2110372994
-      playerRunningLeft_3: -512941402
-      playerRunningLeft_4: -1052969101
+      wooden_sword_0: 1696856775
+      wooden_sword_1: 1221646192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

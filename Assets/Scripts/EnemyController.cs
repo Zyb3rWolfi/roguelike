@@ -13,10 +13,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private int distance;
     [SerializeField] private int damage;
+    private Animator _animator;
     
     private Rigidbody2D _rb;
     private playerController player;
-    
+    [SerializeField] private bool _isInAttackRange = false;
+    private bool _attacking = false;
     public static Action<int> AttackPlayer;
 
     private void OnEnable()
@@ -36,6 +38,7 @@ public class EnemyController : MonoBehaviour
         distance = enemyType.followDistance;
         moveSpeed = enemyType.speed;
         damage = enemyType.damage;
+        _animator = gameObject.GetComponent<Animator>();
         
         // Get the player and rigidbody
         player = FindObjectOfType<playerController>();
@@ -43,7 +46,7 @@ public class EnemyController : MonoBehaviour
         
         // Start the coroutines
         StartCoroutine(CheckIfPlayerIsClose());
-        StartCoroutine(DealDamage());
+        StartCoroutine(IsPlayerInRange());
     }
     
     // Takes damage from player
@@ -58,12 +61,11 @@ public class EnemyController : MonoBehaviour
     }
     private IEnumerator CheckIfPlayerIsClose()
     {
-        while (true)
+        while (!_attacking)
         {
             if (Vector2.Distance(transform.position, player.transform.position) < distance)
             {
-                print("Player is near");
-                _rb.velocity = (player.transform.position - transform.position).normalized * moveSpeed;
+                _animator.Play("slimeGoingUndeground");
             } else {
                 _rb.velocity = Vector2.zero;
             }
@@ -73,16 +75,59 @@ public class EnemyController : MonoBehaviour
         }
     }
     
-    // Deals damage to player every 1 second
-    private IEnumerator DealDamage()
+    private IEnumerator IsPlayerInRange()
     {
         while (true)
         {
-            if (Vector2.Distance(transform.position, player.transform.position) < 1)
+            if (Vector2.Distance(transform.position, player.transform.position) < distance)
             {
-                AttackPlayer?.Invoke(damage);
+                _isInAttackRange = true;
             }
-            yield return new WaitForSeconds(1f);
+            else
+            {
+                _isInAttackRange = false;
+                _attacking = false;
+                StartCoroutine(CheckIfPlayerIsClose());
+            }
+            yield return new WaitForSeconds(0.5f);
         }
     }
+    
+    // TeleportToPlayer teleports the enemy to the player
+    // StartAttackAnimation starts the attack animation
+    // AttackPlayerNow runs when the attack animation is over dealing damage
+    public IEnumerator TeleportToPlayer()
+    {
+        _attacking = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(2f);
+        if (transform.position.x < player.transform.position.x)
+        {
+            transform.position = player.transform.position + new Vector3(-0.5f, 0, 0);
+        } else {
+            transform.position = player.transform.position + new Vector3(0.5f, 0, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        _animator.Play("default");
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        StartAttackAnimation();
+    }
+
+    private void StartAttackAnimation()
+    {
+        _animator.Play("SlimeAttacking");
+    }
+
+    // Returns the enemy to the normal state
+    public IEnumerator AttackPlayerNow()
+    {
+        AttackPlayer?.Invoke(damage);
+        _animator.Play("default");
+        if (_isInAttackRange)
+        {
+            yield return new WaitForSeconds(1f);
+            StartAttackAnimation();
+        }
+    }
+    
 }
