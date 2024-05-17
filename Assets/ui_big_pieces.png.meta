@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: b2186e115572e0c47b011447e9acd8d4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui_big_pieces_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 488
+        width: 218
+        height: 76
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993a30d090e36d84c932587c8a24b6e5
+      internalID: 797500904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_1
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 448
+        width: 211
+        height: 100
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134325d144b44d740a6e72b66a664aab
+      internalID: -1601467993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_2
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 504
+        width: 114
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952330ad8bdd32248b0603786e7cd8d0
+      internalID: 1468181579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_3
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 384
+        width: 230
+        height: 180
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a2d9eb45835ec4f89ad1ad75110380
+      internalID: -757770953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 408
+        width: 144
+        height: 72
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126a476cff95440429ebcb166bfa5294
+      internalID: 237400686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 408
+        width: 83
+        height: 72
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a58117306e28245b7f4bd5243eef3d
+      internalID: 1524930787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_6
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 448
+        width: 114
+        height: 53
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8c943e266f37f468165b1f5be2bcce
+      internalID: -1146409218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_7
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 408
+        width: 343
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985d870b88071ce469d764379fc99f88
+      internalID: 765954554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 304
+        width: 425
+        height: 100
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6ad18a2a3fa224381ab04f25341e1b
+      internalID: -1946811123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_9
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 304
+        width: 178
+        height: 100
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941a4ed5cd61b2d4b85fd244539c8969
+      internalID: -449256077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_10
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 304
+        width: 138
+        height: 76
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187de7f061dc8e84e8fa9ce07d5dc076
+      internalID: -496547766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_11
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 304
+        width: 66
+        height: 76
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3c76a0d5bff0d409e2589c92cf7570
+      internalID: -1465374367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 688
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dffcf915deafd024a96fab9a65c2e3d6
+      internalID: -1109898000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_13
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 8
+        width: 152
+        height: 292
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbb91be956735e45b5d56f4f7971ae2
+      internalID: 1885215182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ui_big_pieces_0: 797500904
+      ui_big_pieces_1: -1601467993
+      ui_big_pieces_10: -496547766
+      ui_big_pieces_11: -1465374367
+      ui_big_pieces_12: -1109898000
+      ui_big_pieces_13: 1885215182
+      ui_big_pieces_2: 1468181579
+      ui_big_pieces_3: -757770953
+      ui_big_pieces_4: 237400686
+      ui_big_pieces_5: 1524930787
+      ui_big_pieces_6: -1146409218
+      ui_big_pieces_7: 765954554
+      ui_big_pieces_8: -1946811123
+      ui_big_pieces_9: -449256077
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

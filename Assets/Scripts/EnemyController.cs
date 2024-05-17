@@ -99,18 +99,21 @@ public class EnemyController : MonoBehaviour
     public IEnumerator TeleportToPlayer()
     {
         _attacking = true;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        _animator.Play("slimeMoving");
         yield return new WaitForSeconds(2f);
         if (transform.position.x < player.transform.position.x)
         {
-            transform.position = player.transform.position + new Vector3(-0.5f, 0, 0);
-        } else {
-            transform.position = player.transform.position + new Vector3(0.5f, 0, 0);
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            Vector3 pos = player.transform.position + new Vector3(0.5f, 0, 0);
+            transform.position = Vector2.MoveTowards(transform.position, pos, 10f);
+        } else
+        {
+            Vector3 pos = player.transform.position + new Vector3(-0.5f, 0, 0);
+            transform.position = Vector2.MoveTowards(transform.position, pos, 10f);
+
         }
-        _animator.Play("default");
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        StartAttackAnimation();
+        _animator.Play("slimeAppearing");
     }
 
     private void StartAttackAnimation()
@@ -121,6 +124,7 @@ public class EnemyController : MonoBehaviour
     // Returns the enemy to the normal state
     public IEnumerator AttackPlayerNow()
     {
+        print("attacking the player");
         AttackPlayer?.Invoke(damage);
         _animator.Play("default");
         if (_isInAttackRange)

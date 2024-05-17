@@ -15,12 +15,12 @@ public class playerController : MonoBehaviour
     [SerializeField] private InventoryObject _inventoryObject;
 
     [Header("Animation")] [SerializeField] private Animator _animator;
-    
-    [Header("Weapon Placement")]
-    [SerializeField] private Vector3 _rightLocation;
-    [SerializeField] private Vector3 _leftLocation;
-    [SerializeField] private Vector3 _upLocation;
-    [SerializeField] private Vector3 _downLocation;
+
+    [Header("Weapon Placement")] [SerializeField]
+    private GameObject _weaponParent;
+
+    [SerializeField] private GameObject _rightPlaceholder;
+    [SerializeField] private GameObject _leftPlaceholder;
     
     private Rigidbody2D _rb;
     private bool _canHit = false;
@@ -46,6 +46,8 @@ public class playerController : MonoBehaviour
     void Start()
     {
         _rb = player.GetComponent<Rigidbody2D>();
+        _weaponParent.transform.SetParent(_leftPlaceholder.transform);
+        _weaponParent.transform.localPosition = new Vector3(0, 0, 0);
 
     }
 
@@ -73,40 +75,25 @@ public class playerController : MonoBehaviour
             is_moveing = false;
         }
 
-        if (_magnitude.x < 0) 
+        if (_magnitude.x < 0)
         {
-            GameObject child = player.transform.GetChild(0).gameObject;
-            child.transform.localPosition = _leftLocation;
-            child.GetComponent<SpriteRenderer>().sortingOrder = 12;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            _weaponParent.transform.SetParent(_leftPlaceholder.transform);
+            _weaponParent.transform.localPosition = new Vector3(0, 0, 0);
+            _weaponParent.transform.localScale = new Vector3(-1, 1, -1);
 
-            child.GetComponent<SpriteRenderer>().flipY = false;
-            child.GetComponent<SpriteRenderer>().flipX = true;
-        } else if (_magnitude.x > 0)
-        {
-            GameObject child = player.transform.GetChild(0).gameObject;
-            child.transform.localPosition = _rightLocation;
-            child.GetComponent<SpriteRenderer>().sortingOrder = 12;
-            child.GetComponent<SpriteRenderer>().flipY = true;
-            child.GetComponent<SpriteRenderer>().flipX = false;
         }
-
-        if (_magnitude.y > 0)
+        else
         {
-            GameObject child = player.transform.GetChild(0).gameObject;
-            child.transform.localPosition = _upLocation;
-            child.GetComponent<SpriteRenderer>().sortingOrder = 1;
-            child.GetComponent<SpriteRenderer>().flipY = false;
-            child.GetComponent<SpriteRenderer>().flipX = false;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            _weaponParent.transform.SetParent(_rightPlaceholder.transform);
+            _weaponParent.transform.localPosition = new Vector3(0, 0, 0);
+            _weaponParent.transform.localScale = new Vector3(1, 1, -1);
 
-        } else if (_magnitude.y < 0)
-        {
-            GameObject child = player.transform.GetChild(0).gameObject;
-            child.transform.localPosition = _downLocation;
-            child.GetComponent<SpriteRenderer>().sortingOrder = 12;
-            child.GetComponent<SpriteRenderer>().flipY = true;
-            child.GetComponent<SpriteRenderer>().flipX = false;
         }
         handleAnimation();
+
+        
     }
 
     private void handleAnimation()

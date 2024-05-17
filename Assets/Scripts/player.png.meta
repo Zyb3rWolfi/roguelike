@@ -93,6 +93,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -105,18 +118,137 @@ TextureImporter:
         width: 11
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
-      bones: []
+      bones:
+      - name: bone_1
+        guid: 50b7f27048660104d9a3b65e3e640537
+        position: {x: 10.28211, y: 3.9639206, z: 0}
+        rotation: {x: 0, y: 0, z: 0.98341864, w: 0.18135002}
+        length: 5.3423557
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 4278190335
       spriteID: cf1fc9b4d0203b44fbaf7d32c8173c3c
       internalID: 142467270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+      vertices:
+      - {x: 6.993, y: 0.11199999}
+      - {x: 10.196, y: 0.48199984}
+      - {x: 10.735001, y: 1.112}
+      - {x: 10.962, y: 6.001}
+      - {x: 11, y: 11}
+      - {x: 11, y: 14}
+      - {x: 4.032, y: 13.742}
+      - {x: 0, y: 13}
+      - {x: 0, y: 7.999}
+      - {x: 0, y: 3.001}
+      - {x: 0, y: 0}
+      indices: 000000000200000001000000000000000300000002000000000000000800000003000000000000000900000008000000000000000a00000009000000030000000600000004000000030000000800000006000000040000000600000005000000060000000800000007000000
+      edges:
+      - {x: 0, y: 1}
+      - {x: 0, y: 10}
+      - {x: 1, y: 2}
+      - {x: 2, y: 3}
+      - {x: 3, y: 4}
+      - {x: 4, y: 5}
+      - {x: 5, y: 6}
+      - {x: 6, y: 7}
+      - {x: 7, y: 8}
+      - {x: 8, y: 9}
+      - {x: 9, y: 10}
+      weights:
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
+      - weight[0]: 0
+        weight[1]: 0
+        weight[2]: 0
+        weight[3]: 0
+        boneIndex[0]: 0
+        boneIndex[1]: 0
+        boneIndex[2]: 0
+        boneIndex[3]: 0
     outline: []
     physicsShape: []
     bones: []

@@ -51,16 +51,24 @@ public class InventoryController : MonoBehaviour
 
     private void SetUpInventory()
     {
-        foreach (Transform child in _slotParent.transform)
+        /*foreach (Transform child in _slotParent.transform)
         {
             Destroy(child.gameObject);
-        }
-        
-        for (int i = 0; i < _inventoryObject.items.Count(); i++)
+        }*/
+        int i = 0;
+        int itemsAmount = _inventoryObject.items.Count;
+        print("inv length: " + itemsAmount);
+        foreach (Transform child in _slotParent.transform)
         {
-               GameObject tempSlot = Instantiate(_itemSlot, _slotParent.transform);
-               InvButton invButton = tempSlot.GetComponent<InvButton>();
-               invButton.SetItem(_inventoryObject.items[i]);
+            if (i >= itemsAmount)
+            {
+                return;
+            }
+            UnityEngine.UI.Image renderer = child.GetComponent<UnityEngine.UI.Image>();
+            renderer.sprite = _inventoryObject.items[i].prefab.gameObject.GetComponent<SpriteRenderer>().sprite;
+            print(i);
+            print(renderer);
+            i++;
         }
     }
     
